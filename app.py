@@ -1,3 +1,5 @@
+import os
+
 from quart import Quart, render_template, request, abort
 from tinydb import TinyDB
 
@@ -57,4 +59,4 @@ async def delete_card(card_id: int):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=int(os.environ.get("PORT", 5000)))
